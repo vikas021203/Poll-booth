@@ -15,9 +15,10 @@ app.use("/auth", authRouter);
 app.use("/teams", verifyToken, teamRouter);
 app.use("/teams", verifyToken, pollRouter);
 
-app.use((req, res) => {
+app.use((req, res, next) => {
   console.log(req.path, req.params, req.method);
   // console.log(res);
+  next();
 });
 
 app.all("*", async (req, res) => {
