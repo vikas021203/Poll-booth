@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.all("*", async (req, res) => {
-  res.status(404).json({ message: "Resource not found!" });
+  res.status(200).json({ message: "Resource not found!" });
 });
 
 app.listen(PORT, () => console.log(`Server is listening at port ${PORT}`));
